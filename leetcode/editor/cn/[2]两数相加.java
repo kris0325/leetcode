@@ -30,6 +30,16 @@ class Solution {
 //leetcode submit region end(Prohibit modification and deletion)
 
 
+
+
+/*
+腾讯一面 气球游戏 滑动窗口
+求最小连续枪数打中所有颜色的气球
+
+
+
+////////////////////
+
 import java.util.Scanner;
 import java.util.*;
 
@@ -79,3 +89,6 @@ public class Main {
     }
 
 }
+
+
+ */
