@@ -42,9 +42,37 @@ test
 5
 */
 	
-	/*
 	
+	/*
+	思路：首先有几个关键点
+
+1 何时更新最短子串长度？
+2 如何判定已包含所有数字？
+3 什么时候滑动窗口？
+
+接着我先说明下几个参数
+1 开枪的总次数 total
+2 气球颜色数量 target
+3 滑动窗口的左右指针 left right
+4 最短子串长度 min
+
+何时更新最短子串长度？
+
+最短子串长度初始值为开枪的总次数 total，如果没有比total小的（最小值为 min+1 = right - left + 1 ），说明不满足要求，得不到QQ公仔。
+当子串第一次包含所有的数字时，更新最短子串长度min。
+那么第二个问题来了，如何判定已包含所有数字？
+
+需要一个hashMap来统计每个颜色的数量，这题每种颜色只需要打一枪，但是可以延伸不同颜色不同数量的题目。
+打掉了一个颜色的气球，就相应的在hashMap中KEY值对应value减一
+同时还需要一个count来统计剩余颜色数量
+如果打掉的颜色气球已经打满足要求，不需要再打了，此时的count就不减。因为count只记录剩下需要打的颜色
+什么时候滑动窗口？ 既然要算最短长度，那么肯定要遍历数组的所有情况。那什么时候开始滑呢？ 如果我第一次滑动之前right指针往右移，
+第一次满足了我已经打满了所有颜色的气球的情况 即剩余颜色数量count=0时，这时候我们需要判断现在是不是最短的子串长度，那么left往右移，开始滑动窗口
+
+
+
 	*/
+	
     public static void main(String[] args) {
 	    
     HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
@@ -56,11 +84,13 @@ test
 		for(int i =0;i<total;i++) {
 			gun[i]=scanner.nextInt();			
 		}
+	    // 初始化 气球颜色 值为1 ， 打中减1
 		for(int j=0;j<target;j++) {
 			map.put(j+1, 1);
 		}
 		
 		int left=0;
+	    // count 剩余需要打中颜色的气球数
 		int count=target;
 		int result=0;
 		int min = total;
@@ -77,7 +107,8 @@ test
 						min= right-left;						
 					}
 					if(map.containsKey(gun[left])) {
-						map.put(gun[left], map.get(gun[left])+1);
+						// 滑动窗口左指针右移，这时需跟新map 中对应 key value +1，同时剩余颜色气球数 count +1
+ 						map.put(gun[left], map.get(gun[left])+1);
 						if(map.get(gun[left])>0) count ++;
 					}
 					left++;
