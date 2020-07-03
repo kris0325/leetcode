@@ -41,12 +41,15 @@ test
 
 5
 */
+	
+	/*
+	
+	*/
     public static void main(String[] args) {
-        //Scanner in = new Scanner(System.in);
-        //int a = in.nextInt();
-        //System.out.println(a);
-HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+	    
+    HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
 		Scanner scanner = new Scanner(System.in);
+	  // 
 		int total = scanner.nextInt();
 		int target = scanner.nextInt();
 		int[] gun = new int[total];
