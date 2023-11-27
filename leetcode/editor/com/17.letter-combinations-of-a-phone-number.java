@@ -18,7 +18,7 @@ import java.util.Map;
 // class Solution {
 //     public List<String> letterCombinations(String digits) {
 //         // List<String> phoneNum2String =  new ArrayList<String>(Arrays.asList("","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"));
-//         //使用hashMap 可以应对异常边界条件，比如输入0,1或者非数字
+//         //使用hashMap 可应对异常边界条件，比如输入0,1或者非数字
 //         Map<Character,String> phoneNum2String = new HashMap<>(){{
 //             put('0', "");
 //             put('1', "");
