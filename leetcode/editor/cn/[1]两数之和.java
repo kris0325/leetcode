@@ -28,8 +28,13 @@ class Solution {
                 return result;
             }
             tmpMap.put(nums[i],i);
+<<<<<<< HEAD
         }
         return result;
+=======
+        }   
+           return result;  
+>>>>>>> 27838c175cbb649514c49f3ca199ce14a5fc8d69
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
