@@ -68,9 +68,9 @@
      * @param cur       从根结点到叶子结点的路径，是一个栈
      * @param res        结果集列表
 
-作者：liweiwei1419
-链接：https://leetcode.cn/problems/combination-sum/solutions/14697/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/
+   参考链接：https://leetcode.cn/problems/combination-sum/solutions/14697/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/
  * 
+ * 对于所有搜素可行解类型的问题，都可以尝试 “搜索回溯”的方法求解
  * solution1 
  * 深度优先搜索算法
  * 
@@ -114,7 +114,7 @@ class Solution1 {
             // 重点理解这里从 begin 开始搜索的语意
             for (int i = begin; i < length; i++){
                 cur.addLast(candidates[i]);
-                 // 注意：由于每一个元素可以重复使用，下一轮搜索的起点依然是 i，这里非常容易弄错
+                 // 注意：由于每一个元素可以重复使用，下一轮搜索的起点依然是 i，而不是i+1，这里非常容易弄错
                 dfs(candidates,target-candidates[i], i, length,combinations,cur);
                 // 状态重置
                 cur.removeLast();
