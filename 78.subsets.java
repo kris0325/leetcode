@@ -43,12 +43,37 @@
  * All the numbers of nums are unique.
  * 
  * 
+ * 
+ * solution：
+ * 问题拆分成 从n个元素的数组中选者k个元素的素全组合, 再收集所有组合即可
  */
 
 // @lc code=start
+
+import java.util.ArrayList;
+
 class Solution {
     public List<List<Integer>> subsets(int[] nums) {
-        
+        List<List<Integer>> subsets = new ArrayList<>();
+        for(int k = 0; k <= nums.length; k++){
+            dfs(nums, 0, k, new ArrayList<>(),subsets);
+        }
+        return subsets;   
+    }
+
+    public void dfs(int[] nums, int begin, int k, List<Integer> cur
+    , List<List<Integer>> subsets){
+    if(k == cur.size()){
+        subsets.add(new ArrayList<>(cur));
+        return;
+    }
+    //剪枝优化，由i < n 优化为 
+    // 剩余的元素与下标i(begin)的关系必须满足 k - cur.size() -1 < n -i
+    for(int i = begin; i < nums.length -(k - cur.size() -1); i++){
+        cur.add(nums[i]);
+        dfs(nums, i+1, k, cur, subsets);
+        cur.remove(cur.size()-1);
+    }
     }
 }
 // @lc code=end
