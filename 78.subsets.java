@@ -68,7 +68,8 @@ class Solution {
         return;
     }
     //剪枝优化，由i < n 优化为 
-    // 剩余的元素与下标i(begin)的关系必须满足 k - cur.size() -1 < n -i
+    // 剩余的元素与下标i(begin)的关系必须满足 k - cur.size() < n -i +1
+    //下标是从begin是从0开始，所以计算上面<不等式右边需要+1
     for(int i = begin; i < nums.length -(k - cur.size() -1); i++){
         cur.add(nums[i]);
         dfs(nums, i+1, k, cur, subsets);
