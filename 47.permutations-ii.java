@@ -53,6 +53,7 @@ class Solution {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<Integer> path = new ArrayList<>();
         int len = nums.length;
+        //先排序
         Arrays.sort(nums);
         boolean [] used = new boolean[len];
         backTrack(nums, path, used);
@@ -66,7 +67,12 @@ class Solution {
         }
 
         for(int i = 0 ; i < nums.length; i++){
-            if(!used[i] && (i==0 || nums[i] != nums[i-1] || used[i-1])){
+               /*
+              然后只有在以下情况下选择元素：它沒被選擇過。
+              它是第一个要选择的元素，
+              它与前一个元素不同，或者它与前一个元素相同，但前一个元素也已经被选择。
+              */
+              if(!used[i] && (i==0 || nums[i] != nums[i-1] || used[i-1])){
                 path.add(nums[i]);
                 used[i] = true;
                 backTrack(nums, path, used);
