@@ -115,9 +115,7 @@ public class Solution {
                     index2 = index2.next;
                 }
                 //index1與index2在環的入口處相遇
-                if(index1 == index2){
-                    return index1;
-                }
+                return index1;
             }
         }
         return null;    
