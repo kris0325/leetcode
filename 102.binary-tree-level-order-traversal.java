@@ -49,6 +49,13 @@
  */
 
 // @lc code=start
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -64,9 +71,37 @@
  *     }
  * }
  */
+
+ /*
+ * 思路：二叉树层序遍历，借助queue辅助数据结构来实现
+ * */
 class Solution {
+    List<List<Integer>> result = new ArrayList<>();
     public List<List<Integer>> levelOrder(TreeNode root) {
-        
+        if(null == root) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            //收集当前level的节点元素
+            List<Integer> list = new ArrayList<>();
+            //记录当前节点数量
+            int len = queue.size();
+            //遍历当前level
+            for(int i = 0; i < len;i++){
+                TreeNode node = queue.poll();  
+                list.add(node.val);
+                if(node.left != null){
+                    queue.offer(node.left);
+                }
+                if(node.right != null){
+                    queue.offer(node.right);
+                }
+            }
+            result.add(list);
+        }
+        return result;
     }
 }
 // @lc code=end
