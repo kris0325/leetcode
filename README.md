@@ -19,7 +19,7 @@
 
 ## Dynamic Programing
 [509.Fibonacci Number](https://github.com/kris0325/leetcode/blob/master/509.Fibonacci-Number.java)
-[70.climbStairs](https://github.com/kris0325/leetcode/blob/master/18.climbStairs.java)
+[70.climbStairs](https://github.com/kris0325/leetcode/blob/master/70.climbStairs.java)
 
 
 # 参考
