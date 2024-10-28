@@ -15,9 +15,9 @@
 ## Two Pointer
 [1.twoSum](https://github.com/kris0325/leetcode/blob/master/leetcode/editor/en/1.TwoSum.java)
 
-[15.3-Sum](https://github.com/kris0325/leetcode/blob/master/leetcode/editor/en/15.3-Sum.java)
+[15.3-Sum](https://github.com/kris0325/leetcode/blob/master/leetcode/editor/en/15.ThreeSum.java)
 
-[18.4-sum](https://github.com/kris0325/leetcode/blob/master/leetcode/editor/en/18.4-sum.java)
+[18.4-sum](https://github.com/kris0325/leetcode/blob/master/leetcode/editor/en/18.FourSum.java)
 
 ## Dynamic Programing
 [509.Fibonacci Number](https://github.com/kris0325/leetcode/blob/master/509.Fibonacci-Number.java)
