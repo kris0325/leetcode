@@ -94,18 +94,18 @@ class Solution {
  * debug
 */
 
-class Main{
-public static void main(String[] args) {
-        // Create a new Solution instance
-        Solution solution = new Solution();
-        // Create a test case
-        String testCase = "23";
-        // Get the answer
-        List<String>  result = solution.letterCombinationsBSF(testCase);
-        // Print the answer
-        System.out.println(result);
-    }
-}
+// class Main{
+// public static void main(String[] args) {
+//         // Create a new Solution instance
+//         Solution solution = new Solution();
+//         // Create a test case
+//         String testCase = "23";
+//         // Get the answer
+//         List<String>  result = solution.letterCombinationsBSF(testCase);
+//         // Print the answer
+//         System.out.println(result);
+//     }
+// }
 
 // @lc code=end
 

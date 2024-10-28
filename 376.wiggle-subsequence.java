@@ -74,6 +74,9 @@
 
 // @lc code=start
 class Solution {
+    //时间复杂度：O(n)
+    //空间复杂度：O(1)
+//    376. 摆动序列
     public int wiggleMaxLength(int[] nums) {
 
         if(nums.length == 1){ 
@@ -86,7 +89,7 @@ class Solution {
             int curdif ;
             for(int i = 1; i < nums.length; i++){
                 curdif = nums[i] - nums[i-1];
-                //出现峰值
+                //出现峰值（波峰/波谷）
                 if(predif >=0 && curdif < 0 || predif <= 0 && curdif > 0 ){
                     result++;
                     // 注意这里，只在摆动变化的时候更新prediff
@@ -96,5 +99,6 @@ class Solution {
         return result;
     }
 }
+
 // @lc code=end
 

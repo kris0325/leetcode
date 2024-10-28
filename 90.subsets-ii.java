@@ -35,7 +35,7 @@
  * -10 <= nums[i] <= 10
  * 
  * 
- * 
+ * 90.子集ii
  * Solution1 思路：使用回溯算法, 对unique数组的全排列的变种
  *      问题拆分成 从n个元素的数组中选者k个元素的素全组合
  *      , 再收集所有子组合时去重即可
@@ -94,6 +94,7 @@ class Solution1 {
 }
 
 class Solution {
+    //剪枝：树的同一层，相同元素需要去重，直接跳过
     List<List<Integer>> subsets = new ArrayList<>();
     List<Integer> path = new ArrayList<>();
 

@@ -78,6 +78,7 @@ class Solution1 {
     List<Integer> result = new ArrayList<>();
     
     public List<Integer> preorderTraversal(TreeNode root) {
+        //終止條件
         if(null == root){
             return result;
         }
@@ -112,7 +113,6 @@ class Solution {
             }
         }
         return result;
-
     }
 
 }
