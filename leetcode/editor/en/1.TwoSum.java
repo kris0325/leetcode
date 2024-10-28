@@ -58,19 +58,25 @@ class TwoSum {
            Solution solution = new TwoSum().new Solution();
       }
 
-public class TreeNode {
- int val;
- TreeNode left;
- TreeNode right;
- TreeNode(int x) { val = x; }
-}
       
       //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        return nums;
-    }
-}
+      class Solution {
+          public int[] twoSum(int[] nums, int target) {
+
+              int[] result = new int[2];
+              //利用HashMap 优化时间复杂度到o(n)
+              Map<Integer, Integer> tmpMap = new HashMap<>();
+              for(int i =0; i < nums.length ; i ++ ){
+                  if(tmpMap.containsKey(target - nums[i])){
+                      result[0] = tmpMap.get(target - nums[i]);
+                      result[1] = i;
+                      return result;
+                  }
+                  tmpMap.put(nums[i],i);
+              }
+              return result;
+          }
+      }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
